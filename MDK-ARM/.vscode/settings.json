@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "spi.h": "c",
+        "gpio.h": "c",
+        "segger_rtt.h": "c",
+        "bma2x2.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "bmm150.h": "c",
+        "bmg160.h": "c",
+        "atomic": "c",
+        "*.rh": "c",
+        "iosfwd": "c",
+        "bmx055.h": "c",
+        "xutility": "c"
+    }
+}
