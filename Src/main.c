@@ -24,6 +24,7 @@
 #include "usart.h"
 #include "gpio.h"
 #include "bmx055.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "SEGGER_RTT.h"
@@ -99,8 +100,7 @@ int main(void)
   // __HAL_SPI_ENABLE(&hspi1);
   // SEGGER_RTT_printf(0, "%d", data);
   /* USER CODE END 2 */
-//  HAL_GPIO_WritePin(CSB2_GPIO_Port,CSB2_Pin,GPIO_PIN_SET);
-//  HAL_GPIO_WritePin(PS_GPIO_Port,PS_Pin,GPIO_PIN_RESET);
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -133,7 +133,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
