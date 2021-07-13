@@ -58,7 +58,7 @@ struct output_data Att_Est(void)
   time ++;
   if(time == 2147483647)
       time = 2;
-  
+      
   //Convert all estimates to degrees
   output_data.phi_out = phi_hat_complimentary * 180.0 / pi; 
   output_data.theta_out = theta_hat_complimentary * 180.0 / pi;

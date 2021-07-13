@@ -21,6 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -97,8 +98,9 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   MX_USART1_UART_Init();
-  bmx_055_init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  bmx_055_init();
   // __HAL_SPI_ENABLE(&hspi1);
   // SEGGER_RTT_printf(0, "%d", data);
   /* USER CODE END 2 */
