@@ -13,11 +13,9 @@ struct output_data Att_Est(void)
   float phi_hat_acc,theta_hat_acc = 0.0;
   float phi_hat_gyr,theta_hat_gyr = 0.0;
   float phi_hat1,theta_hat1,phi_hat2,theta_hat2;
-  float pi = 3.1415926;
-  float alf = 0.1;
   float phi_hat_complimentary,theta_hat_complimentary = 0;
   float phi_hat_gyr_comp,theta_hat_gyr_comp = 0;
-  int time = 1;
+  static int time = 1;
 
   bma2x2_data_readout(&acc_data_xyzt);
   bmg160_data_readout(&gyro_data_xyzi);
@@ -58,7 +56,7 @@ struct output_data Att_Est(void)
   time ++;
   if(time == 2147483647)
       time = 2;
-      
+
   //Convert all estimates to degrees
   output_data.phi_out = phi_hat_complimentary * 180.0 / pi; 
   output_data.theta_out = theta_hat_complimentary * 180.0 / pi;

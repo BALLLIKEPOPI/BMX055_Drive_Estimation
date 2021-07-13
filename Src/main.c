@@ -75,7 +75,6 @@ int main(void)
   struct bma2x2_accel_data_temp acc_data_xyzt;
   struct bmm050_mag_data_s16_t mag_data;
   struct bmg160_data_t gyro_data_xyzi;
-  float pi=3.1415926;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

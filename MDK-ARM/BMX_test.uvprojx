@@ -337,7 +337,7 @@
               <MiscControls/>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine/>
-              <IncludePath>../Inc; C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc; C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy; C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include; C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include; ..\RTT; ..\bmx055_driver; ..\Attitude_Estimation</IncludePath>
+              <IncludePath>../Inc;  C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc;  C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;  C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include;  C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include;  ..\RTT;  ..\bmx055_driver;  ..\Attitude_Estimation</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
