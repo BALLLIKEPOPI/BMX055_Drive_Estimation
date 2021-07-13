@@ -401,6 +401,20 @@ int SEGGER_RTT_vprintf(unsigned BufferIndex, const char * sFormat, va_list * pPa
       // Handle specifiers
       //
       switch (c) {
+      case 'f':
+      case 'F':
+      {
+          char ch[10]={0};
+          const char * s=ch;
+          double a = va_arg(*pParamList, double);
+          sprintf(ch,"%4.3f",a);
+          do{
+              c = *s;
+                      s++;
+                      if (c == '\0') break;
+              _StoreChar(&BufferDesc, c);
+            }while(BufferDesc.ReturnValue >= 0);
+      }break;
       case 'c': {
         char c0;
         v = va_arg(*pParamList, int);

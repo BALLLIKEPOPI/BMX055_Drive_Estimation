@@ -11,6 +11,7 @@
         "*.rh": "c",
         "iosfwd": "c",
         "bmx055.h": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "cstdio": "c"
     }
 }

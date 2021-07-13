@@ -73,6 +73,7 @@ int main(void)
   struct bma2x2_accel_data_temp acc_data_xyzt;
   struct bmm050_mag_data_s16_t mag_data;
   struct bmg160_data_t gyro_data_xyzi;
+  float pi=3.1415926;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -109,12 +110,11 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     bma2x2_data_readout(&acc_data_xyzt);
-    // bmm050_data_readout(&mag_data);
     bmg160_data_readout(&gyro_data_xyzi);
     bmm050_data_readout(&mag_data);
-    // SEGGER_RTT_printf(0, "temp = %d, x = %d, y = %d, z = %d\n", acc_data_xyzt.temp,acc_data_xyzt.x/4,acc_data_xyzt.y/4,acc_data_xyzt.z/4);
+    SEGGER_RTT_printf(0, "temp = %d, x = %d, y = %d, z = %d\n", acc_data_xyzt.temp,acc_data_xyzt.x/4,acc_data_xyzt.y/4,acc_data_xyzt.z/4);
     SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
-    // SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",gyro_data_xyzi.datax,gyro_data_xyzi.datay,gyro_data_xyzi.dataz);
+    SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",gyro_data_xyzi.datax*pi/180,gyro_data_xyzi.datay*pi/180,gyro_data_xyzi.dataz*pi/180);
     // SEGGER_RTT_printf(0,"%d\n",mag_data.data_ready);
     HAL_Delay(100);
   }

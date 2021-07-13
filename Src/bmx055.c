@@ -73,6 +73,7 @@ void bmx_055_init(void)
 {
 	// u8 bw_value_u8 = BMA2x2_INIT_VALUE;
 	// u8 banwid = BMA2x2_INIT_VALUE;
+	u8 v_data_rate_value_u8 = BMM050_ZERO_U8X;
 
 	bma2x2.bus_write = BMA2x2_SPI_bus_write;
 	bma2x2.bus_read = BMA2x2_SPI_bus_read;
@@ -93,6 +94,8 @@ void bmx_055_init(void)
 	bmm050_init(&bmm050);
 	bmm050_set_presetmode(BMM050_PRESETMODE_REGULAR);	
 	bmm050_set_functional_state(BMM050_FORCED_MODE);
+	v_data_rate_value_u8 = BMM050_DATA_RATE_30HZ;/* set data rate of 30Hz*/
+	bmm050_set_data_rate(v_data_rate_value_u8);
 
 	bmg160.bus_write = BMG160_SPI_bus_write;
 	bmg160.bus_read = BMG160_SPI_bus_read;
@@ -180,7 +183,7 @@ s32 bmm050_data_readout(struct bmm050_mag_data_s16_t *data)
  *	For the Normal data acquisition/read/write is possible in this mode
  *	by using the below API able to set the power mode as NORMAL*/
 	/* Set the power mode as NORMAL*/
-	com_rslt += bmm050_set_functional_state(BMM050_NORMAL_MODE);
+	// com_rslt += bmm050_set_functional_state(BMM050_NORMAL_MODE);
 /*--------------------------------------------------------------------------*
 ************************* END INITIALIZATION *************************
 *---------------------------------------------------------------------------*/
@@ -191,11 +194,11 @@ s32 bmm050_data_readout(struct bmm050_mag_data_s16_t *data)
 	/* This API used to Write the data rate of the sensor, input
 	value have to be given
 	data rate value set from the register 0x4C bit 3 to 5*/
-	v_data_rate_value_u8 = BMM050_DATA_RATE_30HZ;/* set data rate of 30Hz*/
-	com_rslt += bmm050_set_data_rate(v_data_rate_value_u8);
+	// v_data_rate_value_u8 = BMM050_DATA_RATE_30HZ;/* set data rate of 30Hz*/
+	// com_rslt += bmm050_set_data_rate(v_data_rate_value_u8);
 
 	/* This API used to read back the written value of data rate*/
-	com_rslt += bmm050_get_data_rate(&v_data_rate_u8);
+	// com_rslt += bmm050_get_data_rate(&v_data_rate_u8);
 /*-----------------------------------------------------------------*
 ************************* END GET and SET FUNCTIONS ****************
 *-------------------------------------------------------------------*/
@@ -210,7 +213,7 @@ s32 bmm050_data_readout(struct bmm050_mag_data_s16_t *data)
 	// com_rslt += bmm050_read_mag_data_XYZ_float(&data_float);/* Reads mag xyz data output as 32bit value*/
 
 	/* accessing the bmm050_mdata_s32 parameter by using data_s32*/
-	com_rslt += bmm050_read_mag_data_XYZ_s32(&data_s32);/* Reads mag xyz data output as float value*/
+	// com_rslt += bmm050_read_mag_data_XYZ_s32(&data_s32);/* Reads mag xyz data output as float value*/
 
 /*--------------------------------------------------------------------*
 ************************* END READ SENSOR DATA(X,Y and Z axis) ************
@@ -223,7 +226,8 @@ s32 bmm050_data_readout(struct bmm050_mag_data_s16_t *data)
  *	the SUSPEND mode set from the register 0x4B bit BMM050_ZERO_U8X should be disabled
  *	by using the below API able to set the power mode as SUSPEND*/
 	/* Set the power mode as SUSPEND*/
-	com_rslt += bmm050_set_functional_state(BMM050_SUSPEND_MODE);
+	// com_rslt += bmm050_set_functional_state(BMM050_SUSPEND_MODE);
+	bmm050_set_functional_state(BMM050_FORCED_MODE);
 /*---------------------------------------------------------------------*
 ************************* END DE-INITIALIZATION **********************
 *---------------------------------------------------------------------*/
