@@ -1,7 +1,7 @@
 #ifndef __ATTITUDE_ESTIMATION_H__
 #define __ATTITUDE_ESTIMATION_H__
 
-#define dt 0.0185//积分间隔 Avg. time step
+#define dt 0.01//积分间隔 Avg. time step
 
 struct output_data
 {

@@ -3,6 +3,7 @@
 "bmx_test\main.o"
 "bmx_test\gpio.o"
 "bmx_test\spi.o"
+"bmx_test\tim.o"
 "bmx_test\usart.o"
 "bmx_test\stm32f1xx_it.o"
 "bmx_test\stm32f1xx_hal_msp.o"

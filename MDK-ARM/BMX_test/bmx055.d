@@ -33,4 +33,6 @@ bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Dr
 bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
+bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 bmx_test\bmx055.o: C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
