@@ -1,5 +1,5 @@
 Dependencies for Project 'BMX_test', Target 'BMX_test': (DO NOT MODIFY !)
-F (..\Src\bmx055.c)(0x60EABC72)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\bmx055.o --omf_browse bmx_test\bmx055.crf --depend bmx_test\bmx055.d)
+F (..\Src\bmx055.c)(0x60ED13BD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\bmx055.o --omf_browse bmx_test\bmx055.crf --depend bmx_test\bmx055.d)
 I (..\bmx055_driver\bmx055.h)(0x60EA9AF1)
 I (..\bmx055_driver\bma2x2.h)(0x608B793A)
 I (..\bmx055_driver\bmg160.h)(0x60CD7DC7)
@@ -34,7 +34,7 @@ I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_
 I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5FA41323)
 I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x5FA41323)
 I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5FA41323)
-F (..\Src\main.c)(0x60EBE19A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\main.o --omf_browse bmx_test\main.crf --depend bmx_test\main.d)
+F (..\Src\main.c)(0x60ED6051)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\main.o --omf_browse bmx_test\main.crf --depend bmx_test\main.d)
 I (../Inc/main.h)(0x60EAA39E)
 I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5FA41323)
 I (../Inc/stm32f1xx_hal_conf.h)(0x60EAA39E)
@@ -65,17 +65,18 @@ I (C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_
 I (../Inc/spi.h)(0x60EAA39D)
 I (../Inc/usart.h)(0x60EAA39E)
 I (../Inc/gpio.h)(0x60EAA39D)
+I (..\RTT\SEGGER_RTT.h)(0x60104C6E)
+I (..\RTT\SEGGER_RTT_Conf.h)(0x60104C6E)
+I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
+I (D:\MDK5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
+I (D:\MDK5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (..\bmx055_driver\bmx055.h)(0x60EA9AF1)
 I (..\bmx055_driver\bma2x2.h)(0x608B793A)
 I (..\bmx055_driver\bmg160.h)(0x60CD7DC7)
 I (..\bmx055_driver\bmm150.h)(0x607D7BD2)
 I (..\bmx055_driver\bmm150_defs.h)(0x607D7BD2)
 I (..\bmx055_driver\bmm050.h)(0x60E9A89E)
-I (..\RTT\SEGGER_RTT.h)(0x60104C6E)
-I (..\RTT\SEGGER_RTT_Conf.h)(0x60104C6E)
-I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (D:\MDK5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
-I (D:\MDK5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
+I (..\Attitude_Estimation\Attitude_Estimation.h)(0x60ED7416)
 F (..\Src\gpio.c)(0x60EAA39D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\gpio.o --omf_browse bmx_test\gpio.crf --depend bmx_test\gpio.d)
 I (../Inc/gpio.h)(0x60EAA39D)
 I (../Inc/main.h)(0x60EAA39E)
@@ -689,5 +690,15 @@ I (..\RTT\SEGGER_RTT.h)(0x60104C6E)
 I (..\RTT\SEGGER_RTT_Conf.h)(0x60104C6E)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
 I (D:\MDK5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
-F (..\Attitude_Estimation\Attitude_Estimation.c)(0x60ED1247)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\attitude_estimation.o --omf_browse bmx_test\attitude_estimation.crf --depend bmx_test\attitude_estimation.d)
-F (..\Attitude_Estimation\Attitude_Estimation.h)(0x60ED1247)()
+F (..\Attitude_Estimation\Attitude_Estimation.c)(0x60ED73C8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include -I C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include -I ..\RTT -I ..\bmx055_driver -I ..\Attitude_Estimation-I.\RTE\_BMX_test-ID:\MDK5\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\MDK5\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o bmx_test\attitude_estimation.o --omf_browse bmx_test\attitude_estimation.crf --depend bmx_test\attitude_estimation.d)
+I (..\Attitude_Estimation\Attitude_Estimation.h)(0x60ED7416)
+I (..\bmx055_driver\bmx055.h)(0x60EA9AF1)
+I (..\bmx055_driver\bma2x2.h)(0x608B793A)
+I (..\bmx055_driver\bmg160.h)(0x60CD7DC7)
+I (..\bmx055_driver\bmm150.h)(0x607D7BD2)
+I (..\bmx055_driver\bmm150_defs.h)(0x607D7BD2)
+I (D:\MDK5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
+I (D:\MDK5\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
+I (..\bmx055_driver\bmm050.h)(0x60E9A89E)
+I (D:\MDK5\ARM\ARMCC\include\math.h)(0x599EDB3E)
+F (..\Attitude_Estimation\Attitude_Estimation.h)(0x60ED7416)()

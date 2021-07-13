@@ -23,13 +23,14 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
-#include "bmx055.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 #include <stdio.h>
+#include "bmx055.h"
+#include "Attitude_Estimation.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

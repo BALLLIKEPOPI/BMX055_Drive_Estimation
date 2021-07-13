@@ -146,13 +146,13 @@ s32 bmm050_data_readout(struct bmm050_mag_data_s16_t *data)
 	/* Structure used for read the mag xyz data*/
 	// struct bmm050_mag_data_s16_t data;
 	/* Structure used for read the mag xyz data with 32 bit output*/
-	struct bmm050_mag_s32_data_t data_s32;
+	// struct bmm050_mag_s32_data_t data_s32;
 	/* Structure used for read the mag xyz data with float output*/
 	// struct bmm050_mag_data_float_t data_float;
 	/* Variable used to get the data rate*/
-	u8 v_data_rate_u8 = BMM050_ZERO_U8X;
+	// u8 v_data_rate_u8 = BMM050_ZERO_U8X;
 	/* Variable used to set the data rate*/
-	u8 v_data_rate_value_u8 = BMM050_ZERO_U8X;
+	// u8 v_data_rate_value_u8 = BMM050_ZERO_U8X;
 	/* result of communication results*/
 	s32 com_rslt = ERROR_BMX;
 

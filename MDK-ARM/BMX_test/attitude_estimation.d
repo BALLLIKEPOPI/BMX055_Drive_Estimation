@@ -1,1 +1,11 @@
 bmx_test\attitude_estimation.o: ..\Attitude_Estimation\Attitude_Estimation.c
+bmx_test\attitude_estimation.o: ..\Attitude_Estimation\Attitude_Estimation.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bmx055.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bma2x2.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bmg160.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bmm150.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bmm150_defs.h
+bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stddef.h
+bmx_test\attitude_estimation.o: ..\bmx055_driver\bmm050.h
+bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\math.h
