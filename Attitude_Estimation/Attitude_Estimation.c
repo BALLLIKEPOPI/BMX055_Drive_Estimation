@@ -22,13 +22,13 @@ struct output_data Att_Est(void)
   bmm050_data_readout(&mag_data);
 
   //Convert gyroscope measurements to radians
-  Gx_rad = gyro_data_xyzi.datax * pi / 180.0;
-  Gy_rad = gyro_data_xyzi.datay * pi / 180.0;
-  Gz_rad = gyro_data_xyzi.dataz * pi / 180.0;
+  Gx_rad = (float)(gyro_data_xyzi.datax) * pi / 180.0;
+  Gy_rad = (float)(gyro_data_xyzi.datay) * pi / 180.0;
+  Gz_rad = (float)(gyro_data_xyzi.dataz) * pi / 180.0;
 
-  Ax = acc_data_xyzt.x;
-  Ay = acc_data_xyzt.y;
-  Az = acc_data_xyzt.z;
+  Ax = (float)(acc_data_xyzt.x);
+  Ay = (float)(acc_data_xyzt.y);
+  Az = (float)(acc_data_xyzt.z);
 
   //Accelerometer only
   phi_hat_acc = atan2(Ay,sqrtf(Ax * Ax + Az * Az));
@@ -54,7 +54,7 @@ struct output_data Att_Est(void)
   phi_hat2 = phi_hat_complimentary;
   theta_hat2 = theta_hat_complimentary;
   time ++;
-  if(time == 2147483647)
+  if(time == 1000)
       time = 2;
 
   //Convert all estimates to degrees

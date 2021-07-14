@@ -75,6 +75,8 @@ int main(void)
   struct bma2x2_accel_data_temp acc_data_xyzt;
   struct bmm050_mag_data_s16_t mag_data;
   struct bmg160_data_t gyro_data_xyzi;
+  struct output_data output_data;
+  int loop = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -98,8 +100,10 @@ int main(void)
   MX_SPI1_Init();
   MX_USART1_UART_Init();
   MX_TIM2_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   bmx_055_init();
+  // HAL_TIM_Base_Start_IT(&htim1);
   // __HAL_SPI_ENABLE(&hspi1);
   // SEGGER_RTT_printf(0, "%d", data);
   /* USER CODE END 2 */
@@ -111,14 +115,24 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    bma2x2_data_readout(&acc_data_xyzt);
-    bmg160_data_readout(&gyro_data_xyzi);
-    bmm050_data_readout(&mag_data);
-    SEGGER_RTT_printf(0, "temp = %d, x = %d, y = %d, z = %d\n", acc_data_xyzt.temp,acc_data_xyzt.x/4,acc_data_xyzt.y/4,acc_data_xyzt.z/4);
-    SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
-    SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",gyro_data_xyzi.datax*pi/180,gyro_data_xyzi.datay*pi/180,gyro_data_xyzi.dataz*pi/180);
-    // SEGGER_RTT_printf(0,"%d\n",mag_data.data_ready);
-    HAL_Delay(100);
+    
+
+    output_data = Att_Est();
+    // if(loop == 50)
+    // {
+      SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
+      // loop = 0;
+    // }
+    // loop ++;                                                                                                                                  
+    HAL_Delay(10);
+    // bma2x2_data_readout(&acc_data_xyzt);
+    // bmg160_data_readout(&gyro_data_xyzi);
+    // bmm050_data_readout(&mag_data);
+    // SEGGER_RTT_printf(0, "temp = %d, x = %d, y = %d, z = %d\n", acc_data_xyzt.temp,acc_data_xyzt.x/4,acc_data_xyzt.y/4,acc_data_xyzt.z/4);
+    // SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
+    // SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",gyro_data_xyzi.datax*pi/180,gyro_data_xyzi.datay*pi/180,gyro_data_xyzi.dataz*pi/180);
+    // // SEGGER_RTT_printf(0,"%d\n",mag_data.data_ready);
+    // HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
@@ -161,7 +175,22 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if(htim -> Instance == htim1.Instance)
+  {
+    struct output_data output_data;
+    int loop = 0;
 
+    loop ++;
+    output_data = Att_Est();
+    if(loop == 50)
+    {
+      SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
+      loop = 0;
+    }
+  }
+}
 /* USER CODE END 4 */
 
 /**
