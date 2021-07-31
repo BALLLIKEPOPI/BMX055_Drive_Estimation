@@ -286,7 +286,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyz(struct bmg160_data_t *data)
                                                 BMG160_ALL_DATA_FRAME_LENGTH);
 
         /* Data X */
-        v_data_u8[BMG160_DATA_FRAME_X_LSB_BYTE] = BMG160_GET_BIT_POS0(v_data_u8[BMG160_DATA_FRAME_X_LSB_BYTE],
+        v_data_u8[BMG160_DATA_FRAME_X_LSB_BYTE] = BMG160_GET_BITSLICE(v_data_u8[BMG160_DATA_FRAME_X_LSB_BYTE],
                                                                       BMG160_RATE_X_LSB_BIT);
 
         /* To avoid signed integer shifting, multiplication by the same factor of position shift is performed
@@ -296,7 +296,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyz(struct bmg160_data_t *data)
                   (v_data_u8[BMG160_DATA_FRAME_X_LSB_BYTE]));
 
         /* Data Y */
-        v_data_u8[BMG160_DATA_FRAME_Y_LSB_BYTE] = BMG160_GET_BIT_POS0(v_data_u8[BMG160_DATA_FRAME_Y_LSB_BYTE],
+        v_data_u8[BMG160_DATA_FRAME_Y_LSB_BYTE] = BMG160_GET_BITSLICE(v_data_u8[BMG160_DATA_FRAME_Y_LSB_BYTE],
                                                                       BMG160_RATE_Y_LSB_BIT);
 
         /* To avoid signed integer shifting, multiplication by the same factor of position shift is performed
@@ -306,7 +306,7 @@ BMG160_RETURN_FUNCTION_TYPE bmg160_get_data_xyz(struct bmg160_data_t *data)
                   (v_data_u8[BMG160_DATA_FRAME_Y_LSB_BYTE]));
 
         /* Data Z */
-        v_data_u8[BMG160_DATA_FRAME_Z_LSB_BYTE] = BMG160_GET_BIT_POS0(v_data_u8[BMG160_DATA_FRAME_Z_LSB_BYTE],
+        v_data_u8[BMG160_DATA_FRAME_Z_LSB_BYTE] = BMG160_GET_BITSLICE(v_data_u8[BMG160_DATA_FRAME_Z_LSB_BYTE],
                                                                       BMG160_RATE_Z_LSB_BIT);
 
         /* To avoid signed integer shifting, multiplication by the same factor of position shift is performed

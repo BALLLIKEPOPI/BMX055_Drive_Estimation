@@ -13,6 +13,7 @@
         "bmx055.h": "c",
         "xutility": "c",
         "cstdio": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "stdio.h": "c"
     }
 }

@@ -4,9 +4,9 @@ Set JLink Project File to "d:\Stm32_proj\BMX_test\MDK-ARM\JLinkSettings.ini"* JL
 JLink info:
 ------------
 DLL: V6.48b, compiled Aug  2 2019 10:18:25
-Firmware: J-Link V9 compiled May  7 2021 16:26:12
+Firmware: J-Link V9 compiled Dec 13 2019 11:14:50
 Hardware: V9.50
-S/N : 23520949 
+S/N : 23521442 
 Feature(s) : GDB, RDI, FlashBP, FlashDL, JFlash, RDDI 
 
 * JLink Info: Found SW-DP with ID 0x1BA01477
@@ -35,11 +35,11 @@ ROMTableAddr = 0xE00FF000
 Target info:
 ------------
 Device: STM32F103RC
-VTarget = 3.353V
+VTarget = 3.287V
 State of Pins: TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
 Hardware-Breakpoints: 6
 Software-Breakpoints: 8192
 Watchpoints:          4
 JTAG speed: 4000 kHz
 
-Erase Done.Programming Done.Verify OK.Flash Load finished at 13:08:18
+Erase Done.Programming Done.Verify OK.Flash Load finished at 11:32:28

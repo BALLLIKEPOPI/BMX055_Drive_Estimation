@@ -4,7 +4,7 @@
 
 struct output_data Att_Est(void)
 {
-  struct bma2x2_accel_data_temp acc_data_xyzt;
+  struct bma2x2_accel_data acc_data_xyz;
   struct bmm050_mag_data_s16_t mag_data;
   struct bmg160_data_t gyro_data_xyzi;
   struct output_data output_data;
@@ -17,18 +17,18 @@ struct output_data Att_Est(void)
   float phi_hat_gyr_comp,theta_hat_gyr_comp = 0;
   static int time = 1;
 
-  bma2x2_data_readout(&acc_data_xyzt);
+  bma2x2_data_readout(&acc_data_xyz);
   bmg160_data_readout(&gyro_data_xyzi);
   bmm050_data_readout(&mag_data);
 
   //Convert gyroscope measurements to radians
-  Gx_rad = (float)(gyro_data_xyzi.datax) * pi / 180.0;
-  Gy_rad = (float)(gyro_data_xyzi.datay) * pi / 180.0;
-  Gz_rad = (float)(gyro_data_xyzi.dataz) * pi / 180.0;
+  Gx_rad = (float)((gyro_data_xyzi.datax*2000.0*pi)/(32767.0*180.0));
+  Gy_rad = (float)((gyro_data_xyzi.datay*2000.0*pi)/(32767.0*180.0));
+  Gz_rad = (float)((gyro_data_xyzi.dataz*2000.0*pi)/(32767.0*180.0));
 
-  Ax = (float)(acc_data_xyzt.x);
-  Ay = (float)(acc_data_xyzt.y);
-  Az = (float)(acc_data_xyzt.z);
+  Ax = (float)(acc_data_xyz.x)/4;
+  Ay = (float)(acc_data_xyz.y)/4;
+  Az = (float)(acc_data_xyz.z)/4;
 
   //Accelerometer only
   phi_hat_acc = atan2(Ay,sqrtf(Ax * Ax + Az * Az));

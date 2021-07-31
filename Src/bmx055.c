@@ -79,6 +79,7 @@ void bmx_055_init(void)
 	bma2x2.bus_read = BMA2x2_SPI_bus_read;
 	bma2x2.delay_msec = BMA2x2_delay_msek;
 	bma2x2_init(&bma2x2);
+	HAL_Delay(2);
 	bma2x2_set_range(BMA2x2_RANGE_2G);
 	bma2x2_set_bw(BMA2x2_BW_62_50HZ);
 	// bma2x2_set_bw(0x08);
@@ -92,6 +93,7 @@ void bmx_055_init(void)
 	bmm050.bus_read = BMM050_SPI_bus_read;
 	bmm050.delay_msec = BMM050_delay_msek;
 	bmm050_init(&bmm050);
+	HAL_Delay(2);
 	bmm050_set_presetmode(BMM050_PRESETMODE_REGULAR);	
 	bmm050_set_functional_state(BMM050_FORCED_MODE);
 	v_data_rate_value_u8 = BMM050_DATA_RATE_30HZ;/* set data rate of 30Hz*/
@@ -101,15 +103,16 @@ void bmx_055_init(void)
 	bmg160.bus_read = BMG160_SPI_bus_read;
 	bmg160.delay_msec = BMG160_delay_msek;
 	bmg160_init(&bmg160);
+	HAL_Delay(2);
 	bmg160_set_range_reg(0x02);
-	bmg160_set_bw(0x06);
+	bmg160_set_bw(C_BMG160_BW_230HZ_U8X);
 }
-s32 bma2x2_data_readout(struct bma2x2_accel_data_temp *xyzt)
+s32 bma2x2_data_readout(struct bma2x2_accel_data *xyz)
 {
 	/*Local variables for reading accel x, y and z data*/
 	s16	accel_x_s16, accel_y_s16, accel_z_s16 = BMA2x2_INIT_VALUE;
 	/* bma2x2acc_data structure used to read accel xyz data*/
-	struct bma2x2_accel_data sample_xyz;
+	// struct bma2x2_accel_data sample_xyz;
 	/* bma2x2acc_data_temp structure used to read
 		accel xyz and temperature data*/
 	// struct bma2x2_accel_data_temp sample_xyzt;
@@ -131,11 +134,11 @@ s32 bma2x2_data_readout(struct bma2x2_accel_data_temp *xyzt)
 
 	/* accessing the bma2x2acc_data parameter by using sample_xyz*/
 	/* Read the accel XYZ data*/
-	com_rslt += bma2x2_read_accel_xyz(&sample_xyz);
+	com_rslt += bma2x2_read_accel_xyz(xyz);
 
 	/* accessing the bma2x2acc_data_temp parameter by using sample_xyzt*/
 	/* Read the accel XYZT data*/
-	com_rslt += bma2x2_read_accel_xyzt(xyzt);
+	// com_rslt += bma2x2_read_accel_xyzt(xyzt);
 	com_rslt += bma2x2_set_power_mode(BMA2x2_MODE_DEEP_SUSPEND);
 
 	return com_rslt;
@@ -240,16 +243,16 @@ s32 bmg160_data_readout(struct bmg160_data_t *gyro_xyzi_data)
     s16 v_gyro_datax_s16, v_gyro_datay_s16, v_gyro_dataz_s16 = BMG160_INIT_VALUE;
 
     /* structure used for read the sensor data - xyz*/
-    struct bmg160_data_t data_gyro;
+    // struct bmg160_data_t data_gyro;
 
     /* structure used for read the sensor data - xyz and interrupt status*/
     // struct bmg160_data_t gyro_xyzi_data;
 
     /* variable used for read the gyro bandwidth data*/
-    u8 v_gyro_value_u8 = BMG160_INIT_VALUE;
+    // u8 v_gyro_value_u8 = BMG160_INIT_VALUE;
 
     /* variable used for set the gyro bandwidth data*/
-    u8 v_bw_u8;
+    // u8 v_bw_u8;
 
     /* result of communication results*/
     s32 com_rslt;
@@ -308,11 +311,11 @@ s32 bmg160_data_readout(struct bmg160_data_t *gyro_xyzi_data)
      * input value have to be give 0x10 bit BMG160_INIT_VALUE to 3
      * The bandwidth set from the register
      */
-    v_bw_u8 = C_BMG160_BW_230HZ_U8X; /* set gyro bandwidth of 230Hz*/
-    com_rslt += bmg160_set_bw(v_bw_u8);
+    // v_bw_u8 = C_BMG160_BW_230HZ_U8X; /* set gyro bandwidth of 230Hz*/
+    // com_rslt += bmg160_set_bw(v_bw_u8);
 
     /* This API used to read back the written value of bandwidth for gyro*/
-    com_rslt += bmg160_get_bw(&v_gyro_value_u8);
+    // com_rslt += bmg160_get_bw(&v_gyro_value_u8);
 
     /*---------------------------------------------------------------------*
      ************************* END GET and SET FUNCTIONS ********************
@@ -327,10 +330,10 @@ s32 bmg160_data_readout(struct bmg160_data_t *gyro_xyzi_data)
     com_rslt += bmg160_get_data_y(&v_gyro_datay_s16); /* Read the gyro Y data*/
     com_rslt += bmg160_get_data_z(&v_gyro_dataz_s16); /* Read the gyro Z data*/
     /* accessing the  bmg160_data_t parameter by using data_gyro*/
-    com_rslt += bmg160_get_data_xyz(&data_gyro); /* Read the gyro XYZ data*/
+    com_rslt += bmg160_get_data_xyz(gyro_xyzi_data); /* Read the gyro XYZ data*/
     /* accessing the bmg160_data_t parameter by using gyro_xyzi_data*/
     /* Read the gyro XYZ data and interrupt status*/
-    com_rslt += bmg160_get_data_xyzi(gyro_xyzi_data);
+    // com_rslt += bmg160_get_data_xyzi(gyro_xyzi_data);
 
     /*--------------------------------------------------------------------------
      ************************* END READ SENSOR DATA(X,Y and Z axis) *************
