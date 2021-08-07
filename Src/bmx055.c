@@ -82,6 +82,7 @@ void bmx_055_init(void)
 	HAL_Delay(2);
 	bma2x2_set_range(BMA2x2_RANGE_2G);
 	bma2x2_set_bw(BMA2x2_BW_62_50HZ);
+	bma2x2_set_power_mode(BMA2x2_MODE_NORMAL);
 	// bma2x2_set_bw(0x08);
 	// bma2x2_set_power_mode(BMA2x2_MODE_NORMAL);
 	// bw_value_u8 = 0x08;/* set bandwidth of 7.81Hz*/
@@ -106,6 +107,7 @@ void bmx_055_init(void)
 	HAL_Delay(2);
 	bmg160_set_range_reg(0x02);
 	bmg160_set_bw(C_BMG160_BW_230HZ_U8X);
+	bmg160_set_power_mode(BMG160_MODE_NORMAL);
 }
 s32 bma2x2_data_readout(struct bma2x2_accel_data *xyz)
 {
@@ -123,7 +125,7 @@ s32 bma2x2_data_readout(struct bma2x2_accel_data *xyz)
 	/* status of communication*/
 	s32 com_rslt = ERROR_BMX;
 	
-	com_rslt += bma2x2_set_power_mode(BMA2x2_MODE_NORMAL);
+	// com_rslt += bma2x2_set_power_mode(BMA2x2_MODE_NORMAL);
 
 	/* Read the accel X data*/
 	com_rslt += bma2x2_read_accel_x(&accel_x_s16);
@@ -139,7 +141,7 @@ s32 bma2x2_data_readout(struct bma2x2_accel_data *xyz)
 	/* accessing the bma2x2acc_data_temp parameter by using sample_xyzt*/
 	/* Read the accel XYZT data*/
 	// com_rslt += bma2x2_read_accel_xyzt(xyzt);
-	com_rslt += bma2x2_set_power_mode(BMA2x2_MODE_DEEP_SUSPEND);
+	// com_rslt += bma2x2_set_power_mode(BMA2x2_MODE_DEEP_SUSPEND);
 
 	return com_rslt;
 }
@@ -297,7 +299,7 @@ s32 bmg160_data_readout(struct bmg160_data_t *gyro_xyzi_data)
 
     /*-------------------------------------------------------------------------*/
     /* Set the gyro power mode as NORMAL*/
-    com_rslt += bmg160_set_power_mode(BMG160_MODE_NORMAL);
+    // com_rslt += bmg160_set_power_mode(BMG160_MODE_NORMAL);
 
     /*--------------------------------------------------------------------------*
     ************************* END INITIALIZATION ******************************
@@ -353,7 +355,7 @@ s32 bmg160_data_readout(struct bmg160_data_t *gyro_xyzi_data)
      *  For the read/ write operation it is required to provide least 450us
      *  micro second delay
      */
-    com_rslt += bmg160_set_power_mode(BMG160_MODE_DEEPSUSPEND);
+    // com_rslt += bmg160_set_power_mode(BMG160_MODE_DEEPSUSPEND);
 
     /*--------------------------------------------------------------------------*
      *********************** END DE-INITIALIZATION **************************

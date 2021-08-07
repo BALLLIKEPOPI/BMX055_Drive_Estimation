@@ -9,3 +9,7 @@ bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
 bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stddef.h
 bmx_test\attitude_estimation.o: ..\bmx055_driver\bmm050.h
 bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\math.h
+bmx_test\attitude_estimation.o: ..\RTT\SEGGER_RTT.h
+bmx_test\attitude_estimation.o: ..\RTT\SEGGER_RTT_Conf.h
+bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdlib.h
+bmx_test\attitude_estimation.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdarg.h

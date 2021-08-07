@@ -114,14 +114,14 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     
-    // bma2x2_data_readout(&acc_data_xyz);
-    // bmg160_data_readout(&gyro_data_xyzi);
-    // bmm050_data_readout(&mag_data);
-    // SEGGER_RTT_printf(0, "acc x = %f, y = %f, z = %f\n",(float)(acc_data_xyz.x)/4,(float)(acc_data_xyz.y)/4,(float)(acc_data_xyz.z)/4);
-    // // SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
-    // SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",((float)(gyro_data_xyzi.datax)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.datay)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.dataz)*2000.0*pi)/(32767.0*180.0));
-    // // SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",(float)(gyro_data_xyzi.datax),(float)(gyro_data_xyzi.datay),(float)(gyro_data_xyzi.dataz));
-    // HAL_Delay(30);
+//      bma2x2_data_readout(&acc_data_xyz);
+//      bmg160_data_readout(&gyro_data_xyzi);
+//      bmm050_data_readout(&mag_data);
+//      SEGGER_RTT_printf(0, "acc x = %f, y = %f, z = %f\n",(float)(acc_data_xyz.x)/4,(float)(acc_data_xyz.y)/4,(float)(acc_data_xyz.z)/4);
+// //     SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
+//      SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",((float)(gyro_data_xyzi.datax)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.datay)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.dataz)*2000.0*pi)/(32767.0*180.0));
+//     SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",(float)(gyro_data_xyzi.datax),(float)(gyro_data_xyzi.datay),(float)(gyro_data_xyzi.dataz));
+//     HAL_Delay(30);
   }
   /* USER CODE END 3 */
 }
@@ -171,7 +171,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     struct output_data output_data;
 
     output_data = Att_Est();
-    SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
+//    SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
   }
 }
 

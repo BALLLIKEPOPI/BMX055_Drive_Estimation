@@ -1,34 +1,39 @@
 #include "Attitude_Estimation.h"
 #include "bmx055.h"
 #include <math.h>
+#include "SEGGER_RTT.h"
+#include "SEGGER_RTT_Conf.h"
 
 struct output_data Att_Est(void)
 {
   struct bma2x2_accel_data acc_data_xyz;
-  struct bmm050_mag_data_s16_t mag_data;
+  // struct bmm050_mag_data_s16_t mag_data;
   struct bmg160_data_t gyro_data_xyzi;
   struct output_data output_data;
   
   float Gx_rad,Gy_rad,Gz_rad,Ax,Ay,Az = 0.0;
   float phi_hat_acc,theta_hat_acc = 0.0;
   float phi_hat_gyr,theta_hat_gyr = 0.0;
-  float phi_hat1,theta_hat1,phi_hat2,theta_hat2;
-  float phi_hat_complimentary,theta_hat_complimentary = 0;
-  float phi_hat_gyr_comp,theta_hat_gyr_comp = 0;
+  static float phi_hat1,theta_hat1,phi_hat2,theta_hat2;
+  float phi_hat_complimentary,theta_hat_complimentary = 0.0;
+  float phi_hat_gyr_comp,theta_hat_gyr_comp = 0.0;
   static int time = 1;
 
   bma2x2_data_readout(&acc_data_xyz);
   bmg160_data_readout(&gyro_data_xyzi);
-  bmm050_data_readout(&mag_data);
+  // bmm050_data_readout(&mag_data);
 
   //Convert gyroscope measurements to radians
   Gx_rad = (float)((gyro_data_xyzi.datax*2000.0*pi)/(32767.0*180.0));
   Gy_rad = (float)((gyro_data_xyzi.datay*2000.0*pi)/(32767.0*180.0));
   Gz_rad = (float)((gyro_data_xyzi.dataz*2000.0*pi)/(32767.0*180.0));
 
-  Ax = (float)(acc_data_xyz.x)/4;
-  Ay = (float)(acc_data_xyz.y)/4;
-  Az = (float)(acc_data_xyz.z)/4;
+  Ax = (float)(acc_data_xyz.x)/400.0;
+  Ay = (float)(acc_data_xyz.y)/400.0;
+  Az = (float)(acc_data_xyz.z)/400.0;
+
+  SEGGER_RTT_printf(0,"acc x = %f, y = %f, z = %f\n",Ax,Ay,Az);
+  SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",Gx_rad,Gy_rad,Gz_rad);
 
   //Accelerometer only
   phi_hat_acc = atan2(Ay,sqrtf(Ax * Ax + Az * Az));
@@ -54,7 +59,7 @@ struct output_data Att_Est(void)
   phi_hat2 = phi_hat_complimentary;
   theta_hat2 = theta_hat_complimentary;
   time ++;
-  if(time == 1000)
+  if(time >= 1000)
       time = 2;
 
   //Convert all estimates to degrees
