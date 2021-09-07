@@ -31,6 +31,7 @@
 #include "SEGGER_RTT_Conf.h"
 #include <stdio.h>
 #include "bmx055.h"
+#include "pid.h"
 #include "Attitude_Estimation.h"
 /* USER CODE END Includes */
 
@@ -51,7 +52,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+struct pid pid;
+float Speed;
+float compare = 0.0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,9 +75,9 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  struct bma2x2_accel_data acc_data_xyz;
-  struct bmm050_mag_data_s16_t mag_data;
-  struct bmg160_data_t gyro_data_xyzi;
+  // struct bma2x2_accel_data acc_data_xyz;
+  // struct bmm050_mag_data_s16_t mag_data;
+  // struct bmg160_data_t gyro_data_xyzi;
   // struct output_data output_data;
   // int loop = 0;
   /* USER CODE END 1 */
@@ -103,6 +106,7 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
   bmx_055_init();
+  PID_init(&pid);
   HAL_TIM_Base_Start_IT(&htim1);
   /* USER CODE END 2 */
 
@@ -113,15 +117,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    
-//      bma2x2_data_readout(&acc_data_xyz);
-//      bmg160_data_readout(&gyro_data_xyzi);
-//      bmm050_data_readout(&mag_data);
-//      SEGGER_RTT_printf(0, "acc x = %f, y = %f, z = %f\n",(float)(acc_data_xyz.x)/4,(float)(acc_data_xyz.y)/4,(float)(acc_data_xyz.z)/4);
-// //     SEGGER_RTT_printf(0,"x = %d, y = %d, z = %d\n",mag_data.datax,mag_data.datay,mag_data.dataz);
-//      SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",((float)(gyro_data_xyzi.datax)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.datay)*2000.0*pi)/(32767.0*180.0),((float)(gyro_data_xyzi.dataz)*2000.0*pi)/(32767.0*180.0));
-//     SEGGER_RTT_printf(0,"x = %f, y = %f, z = %f\n",(float)(gyro_data_xyzi.datax),(float)(gyro_data_xyzi.datay),(float)(gyro_data_xyzi.dataz));
-//     HAL_Delay(30);
   }
   /* USER CODE END 3 */
 }
@@ -171,20 +166,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     struct output_data output_data;
 
     output_data = Att_Est();
-//    SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
+    Speed = PID_realize(output_data.phi_out,&pid);
+    compare = Speed_r2c(Speed);
+
+    if(compare > 1100)//限幅
+      compare = 1100;
+    if(compare < 100)
+      compare = 100;
+    SEGGER_RTT_printf(0,"phi = %f, theta = %f\n",output_data.phi_out,output_data.theta_out);
   }
-}
-
-
-int fputc(int ch,FILE *f)
- 
-{
-    uint32_t temp = ch;
- 
-    HAL_UART_Transmit(&huart1,(uint8_t *)&temp,1,1000);        //huart3是串口的句柄
-    HAL_Delay(2);
- 
-    return ch;
 }
 
 /* USER CODE END 4 */

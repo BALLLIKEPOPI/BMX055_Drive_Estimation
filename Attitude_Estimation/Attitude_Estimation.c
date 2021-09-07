@@ -32,8 +32,8 @@ struct output_data Att_Est(void)
   Ay = (float)(acc_data_xyz.y)/400.0;
   Az = (float)(acc_data_xyz.z)/400.0;
 
-  SEGGER_RTT_printf(0,"acc x = %f, y = %f, z = %f\n",Ax,Ay,Az);
-  SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",Gx_rad,Gy_rad,Gz_rad);
+  // SEGGER_RTT_printf(0,"acc x = %f, y = %f, z = %f\n",Ax,Ay,Az);
+  // SEGGER_RTT_printf(0,"gyro x = %f, y = %f, z = %f\n",Gx_rad,Gy_rad,Gz_rad);
 
   //Accelerometer only
   phi_hat_acc = atan2(Ay,sqrtf(Ax * Ax + Az * Az));

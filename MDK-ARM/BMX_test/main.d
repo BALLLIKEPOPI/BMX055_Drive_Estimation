@@ -44,4 +44,5 @@ bmx_test\main.o: ..\bmx055_driver\bmg160.h
 bmx_test\main.o: ..\bmx055_driver\bmm150.h
 bmx_test\main.o: ..\bmx055_driver\bmm150_defs.h
 bmx_test\main.o: ..\bmx055_driver\bmm050.h
+bmx_test\main.o: ..\PID\pid.h
 bmx_test\main.o: ..\Attitude_Estimation\Attitude_Estimation.h

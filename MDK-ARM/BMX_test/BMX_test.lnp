@@ -31,6 +31,7 @@
 "bmx_test\bma2x2.o"
 "bmx_test\bmm050.o"
 "bmx_test\attitude_estimation.o"
+"bmx_test\pid.o"
 --library_type=microlib --strict --scatter "BMX_test\BMX_test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

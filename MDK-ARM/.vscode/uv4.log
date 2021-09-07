@@ -35,11 +35,11 @@ ROMTableAddr = 0xE00FF000
 Target info:
 ------------
 Device: STM32F103RC
-VTarget = 3.279V
+VTarget = 3.285V
 State of Pins: TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
 Hardware-Breakpoints: 6
 Software-Breakpoints: 8192
 Watchpoints:          4
 JTAG speed: 4000 kHz
 
-Erase Done.Programming Done.Verify OK.Flash Load finished at 17:37:01
+Erase Done.Programming Done.Verify OK.Flash Load finished at 23:47:46

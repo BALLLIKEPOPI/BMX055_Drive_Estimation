@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;   C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc;   C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;   C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include;   C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include;   ..\RTT;   ..\bmx055_driver;   ..\Attitude_Estimation</IncludePath>
+              <IncludePath>../Inc;C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc;C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Device/ST/STM32F1xx/Include;C:/Users/12969/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.3/Drivers/CMSIS/Include;..\RTT;..\bmx055_driver;..\Attitude_Estimation;..\PID</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -672,6 +672,16 @@
               <FileName>Attitude_Estimation.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Attitude_Estimation\Attitude_Estimation.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>PID</GroupName>
+          <Files>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\PID\pid.c</FilePath>
             </File>
           </Files>
         </Group>
